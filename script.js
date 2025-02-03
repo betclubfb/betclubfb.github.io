@@ -33,7 +33,9 @@ function handleButtonClick(title, message) {
             whatsappButton.target = "_blank";
             whatsappButton.innerHTML = `<img src="whatsapp.jpg" alt="WhatsApp" style="width: 50px; height: 50px;">`;
             newContent.appendChild(whatsappButton);
-        } else {
+        } 
+        // "Çıxarış keçmişi" üçün əlavə düymə yaradılmayacaq
+        else if (title !== 'Çıxarış keçmişi') {
             createActionButton(title);
         }
     }, 800);
@@ -62,7 +64,7 @@ function createActionButton(title) {
             actionButton.textContent = "Hesabdan Çıx";
             actionButton.onclick = () => {
                 localStorage.clear();
-                window.location.href = "login.html";
+                window.location.href = "index.html";
             };
             break;
     }
