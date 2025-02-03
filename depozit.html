@@ -1,0 +1,251 @@
+<!DOCTYPE html><html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promo Kod ile Para Yükleme</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }body {
+        font-family: Arial, sans-serif;
+        background: url('depozit.jpg') no-repeat center center fixed;
+        background-size: cover;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        flex-direction: column;
+        color: white;
+    }
+
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    .info-box {
+        background-color: rgba(45, 45, 45, 0.95);
+        color: white;
+        padding: 20px;
+        border-radius: 15px;
+        max-width: 500px;
+        text-align: center;
+        box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+        border: 3px solid #444;
+    }
+
+    .info-box h3 {
+        margin-bottom: 15px;
+        font-size: 22px;
+        color: white;
+    }
+
+    .info-box p {
+        font-size: 16px;
+        color: white;
+        line-height: 1.5;
+    }
+
+    .info-box button {
+        background-color: #007bff;
+        color: white;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: all 0.3s ease;
+    }
+
+    .info-box button:hover {
+        background-color: #0056b3;
+    }
+
+    .main-container {
+        background-color: rgba(0, 0, 0, 0.6);
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        width: 350px;
+        position: relative;
+        border: 4px solid #444;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 24px;
+    }
+
+    .input-group {
+        margin-bottom: 20px;
+        border: 2px solid #666;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .input-group label {
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    .input-group input {
+        width: 100%;
+        padding: 12px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        outline: none;
+    }
+
+    .submit-group {
+        text-align: center;
+    }
+
+    button {
+        background-color: #28a745;
+        color: white;
+        padding: 12px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #218838;
+        transform: scale(1.05);
+    }
+
+    #balance {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .contact-links {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+    }
+
+    .contact-links a {
+        margin: 0 15px;
+        font-size: 18px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        border: 3px solid transparent;
+        padding: 10px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.2);
+    }
+
+    .contact-links a img {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+    }
+
+    .back-button {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        color: white;
+        font-size: 30px;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: transparent;
+        border: 2px solid white;
+    }
+
+    .back-button i {
+        font-size: 30px;
+    }
+
+    .back-button:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+</style>
+
+</head>
+<body>
+    <!-- Geri git butonu -->
+    <button class="back-button" onclick="window.location.href='../menu/menu.html'">
+        <i class="fas fa-arrow-left"></i>
+    </button><div class="overlay" id="info-overlay">
+    <div class="info-box">
+        <h3>Bilgiləndirmə</h3>
+        <p>  Pul itkilərinin qarşısını almağ məqsədi ilə artıq ödənişləri promo kod vasitəsi ilə
+
+həyata keçiririk. Promo kod almağ üçün whatsappdan bizə yazmağınız yetərlidir.            </p> <button id="understand-button">Anladım</button> </div> </div>
+
+<div class="main-container">
+    <h2>Promo Kod ilə depozit et</h2>
+    <form id="promo-form">
+        <div class="input-group">
+            <label for="promo-code">Promo Kod</label>
+            <input type="text" id="promo-code" name="promo-code" placeholder="Promo kodunuzu daxil edin " required>
+        </div>
+        <div class="submit-group">
+            <button type="submit" id="submit-button"> Promokodu göndər </button>
+        </div>
+    </form>
+    <div id="balance">
+        <h3> Balansınız : <span id="balance-amount">0</span> ₼</h3>
+    </div>
+    <div class="contact-links">
+        <a href="https://wa.me/639639059348?text=Salam" class="whatsapp" target="_blank">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        </a>
+          </div>
+</div>
+
+<script>
+    document.getElementById("understand-button").addEventListener("click", function() {
+        document.getElementById("info-overlay").style.display = "none";
+    });
+
+    let balance = 0;
+
+    document.getElementById("promo-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const promoCode = document.getElementById("promo-code").value;
+
+        if (promoCode === "PROMO2025") {
+            balance += 100;
+            document.getElementById("balance-amount").innerText = balance.toFixed(2);
+            alert("Promo kodu başarıyla kullanıldı! Bakiyeniz güncellendi.");
+        } else {
+            alert(" Keçərsiz promokod.");
+        }
+
+        document.getElementById("promo-code").value = "";
+    });
+</script>
+
+</body>
+</html>
+
+
+

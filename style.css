@@ -1,0 +1,213 @@
+/* Temel sıfırlamalar */
+* {
+  margin: 0; /* Sayfa üzerindeki tüm öğelerin margin'ini sıfırlıyoruz */
+  padding: 0; /* Sayfa üzerindeki tüm öğelerin padding'ini sıfırlıyoruz */
+  box-sizing: border-box; /* Tüm öğeler için box modelini border-box olarak ayarlıyoruz */
+}
+
+/* Sayfa genel stil ayarları */
+body {
+  font-family: 'Arial', sans-serif; /* Sayfa fontunu Arial olarak ayarlıyoruz */
+  background: linear-gradient(135deg, #3b105f, #ff0078); /* Sayfa arka planını iki renkli bir gradyan ile yapıyoruz */
+  color: #fff; /* Yazı rengini beyaz yapıyoruz */
+  height: 100vh; /* Sayfa yüksekliğini ekranın tamamına ayarlıyoruz */
+  display: flex; /* Flexbox modelini kullanıyoruz */
+  justify-content: center; /* İçeriği yatayda ortalıyoruz */
+  align-items: center; /* İçeriği dikeyde ortalıyoruz */
+  overflow: hidden; /* Sayfa dışına taşan içerikleri gizliyoruz */
+}
+
+/* Profil kutusu */
+.profile-container {
+  display: flex; /* Flexbox modelini kullanıyoruz */
+  flex-direction: column; /* İçeriği dikeyde hizalıyoruz */
+  align-items: center; /* İçeriği yatayda ortalıyoruz */
+  justify-content: center; /* İçeriği dikeyde ortalıyoruz */
+  padding: 30px; /* İçeriğe 30px'lik padding ekliyoruz */
+  background: rgba(0, 0, 0, 0.8); /* Yarı saydam siyah arka plan rengi */
+  border: 3px solid #ffbf00; /* Profil kutusunun etrafına sarı renkli bir kenarlık ekliyoruz */
+  border-radius: 15px; /* Profil kutusunun köşelerini yuvarlatıyoruz */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5); /* Profil kutusuna gölge efekti ekliyoruz */
+  max-width: 600px; /* Profil kutusunun genişliğini 600px ile sınırlıyoruz */
+  position: relative; /* Konumlandırma için relative kullanıyoruz */
+  transition: transform 0.8s ease, opacity 0.8s ease; /* Geçiş efektleri ekliyoruz */
+}
+
+/* Profil başlık ve bilgi düzeni */
+.profile-header {
+  display: flex; /* Flexbox modelini kullanıyoruz */
+  align-items: center; /* Başlık ve iconu yatayda ortalıyoruz */
+  justify-content: center; /* Başlık ve iconu dikeyde ortalıyoruz */
+  width: 100%; /* Profil başlığının genişliğini %100 yapıyoruz */
+  margin-bottom: 20px; /* Profil başlığına alt boşluk ekliyoruz */
+}
+
+#closeButton {
+  position: absolute; /* Konumlandırma için absolute kullanıyoruz */
+  top: 10px; /* Üstten 10px mesafe bırakıyoruz */
+  right: 10px; /* Sağdan 10px mesafe bırakıyoruz */
+  font-size: 20px; /* Yazı boyutunu 20px yapıyoruz */
+  background: none; /* Arka planı kaldırıyoruz */
+  border: none; /* Kenarlıkları kaldırıyoruz */
+  color: #fff; /* Rengini beyaz yapıyoruz */
+  cursor: pointer; /* Fareyle üzerine gelindiğinde pointer işareti görünsün */
+}
+
+#closeButton:hover {
+  color: #ff0000; /* Fareyle üzerine gelindiğinde butonun rengini kırmızı yapıyoruz */
+}
+
+.profile-icon {
+  width: 120px; /* Profil simgesinin genişliğini 120px yapıyoruz */
+  height: 120px; /* Profil simgesinin yüksekliğini 120px yapıyoruz */
+  border-radius: 50%; /* Profil simgesini yuvarlak yapıyoruz */
+  border: 4px solid #ffbf00; /* Profil simgesinin etrafına sarı renkli bir kenarlık ekliyoruz */
+  background: url('../foto/profile.jpg') no-repeat center/cover; /* Profil simgesine arka plan resmi ekliyoruz */
+  display: flex; /* Flexbox modelini kullanıyoruz */
+  justify-content: center; /* İçeriği yatayda ortalıyoruz */
+  align-items: center; /* İçeriği dikeyde ortalıyoruz */
+  margin-right: 20px; /* Sağ tarafta 20px'lik boşluk bırakıyoruz */
+}
+
+.profile-info {
+  flex: 1; /* Profil bilgisi öğesinin büyüklüğünü ayarlıyoruz */
+  display: flex; /* Flexbox modelini kullanıyoruz */
+  flex-direction: column; /* İçeriği dikeyde hizalıyoruz */
+  color: #ffe900; /* Yazı rengini sarı yapıyoruz */
+  text-align: left; /* Yazıyı sola hizalıyoruz */
+}
+
+.profile-info span {
+  font-size: 18px; /* Yazı boyutunu 18px yapıyoruz */
+  margin-bottom: 10px; /* Yazı arasına 10px'lik boşluk bırakıyoruz */
+}
+
+/* Butonlar düzeni */
+.buttons-container {
+  display: flex; /* Flexbox modelini kullanıyoruz */
+  flex-direction: column; /* Butonları dikeyde hizalıyoruz */
+  width: 100%; /* Butonlar genişliğini %100 yapıyoruz */
+  margin-top: 20px; /* Butonların üstüne 20px boşluk ekliyoruz */
+}
+
+.button {
+  padding: 14px 0; /* Butonun üst ve altına 14px padding ekliyoruz */
+  background: linear-gradient(135deg, #ff0078, #ffbf00); /* Butona iki renkli bir gradyan arka plan ekliyoruz */
+  color: white; /* Yazı rengini beyaz yapıyoruz */
+  font-weight: bold; /* Yazıyı kalın yapıyoruz */
+  border: none; /* Kenarlıkları kaldırıyoruz */
+  border-radius: 8px; /* Butonun köşelerini yuvarlatıyoruz */
+  cursor: pointer; /* Fareyle üzerine gelindiğinde pointer işareti görünsün */
+  font-size: 16px; /* Yazı boyutunu 16px yapıyoruz */
+  margin-bottom: 15px; /* Butonlar arasına 15px'lik boşluk bırakıyoruz */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Geçiş efektleri ekliyoruz */
+  display: flex; /* Flexbox modelini kullanıyoruz */
+  align-items: center; /* Butonun içeriğini yatayda ortalıyoruz */
+  justify-content: center; /* Butonun içeriğini dikeyde ortalıyoruz */
+}
+
+.button i {
+  margin-right: 10px; /* Icon ile yazı arasına 10px'lik boşluk bırakıyoruz */
+}
+
+.button:hover {
+  transform: scale(1.05); /* Fareyle üzerine gelindiğinde butonu %5 büyütüyoruz */
+}
+
+/* Yeni içerik açıldığında */
+.new-content {
+  display: none; /* İlk başta görünmez */
+  justify-content: center; /* İçeriği ortalıyoruz */
+  align-items: center; /* İçeriği dikeyde ortalıyoruz */
+  text-align: center; /* Yazıyı ortalıyoruz */
+  height: 100%; /* İçeriğin yüksekliğini %100 yapıyoruz */
+  width: 100%; /* İçeriğin genişliğini %100 yapıyoruz */
+  animation: fadeIn 0.8s ease forwards; /* FadeIn animasyonu ile içeriği gösteriyoruz */
+  flex-direction: column; /* İçeriği dikeyde hizalıyoruz */
+  background: rgba(0, 0, 0, 0.9); /* Yarı saydam siyah arka plan rengi */
+  border: 5px solid #ffbf00; /* Kenarlık ekliyoruz */
+  border-radius: 15px; /* Köşeleri yuvarlatıyoruz */
+  position: absolute; /* Konumlandırma için absolute kullanıyoruz */
+  top: 0; /* Üstten sıfır mesafe */
+  left: 0; /* Soldan sıfır mesafe */
+  visibility: hidden; /* İlk başta görünmez */
+  padding: 20px; /* İçeriğe 20px'lik padding ekliyoruz */
+  box-sizing: border-box; /* Box modelini border-box olarak ayarlıyoruz */
+  display: grid; /* Grid düzeni kullanıyoruz */
+  grid-template-columns: 1fr; /* Sadece bir sütun kullanıyoruz */
+  grid-gap: 10px; /* Hücreler arasına 10px boşluk ekliyoruz */
+  max-width: 600px; /* Genişliği 600px ile sınırlıyoruz */
+}
+
+/* Başlık görünümü */
+.new-content h1 {
+  font-size: 32px; /* Başlık boyutunu 32px yapıyoruz */
+  margin-bottom: 20px; /* Başlık ile alttaki öğeler arasında 20px boşluk bırakıyoruz */
+  color: #ffbf00; /* Başlık rengini sarı yapıyoruz */
+  text-align: center; /* Başlığı ortalıyoruz */
+  text-transform: uppercase; /* Başlık metnini büyük harf yapıyoruz */
+}
+
+/* Yazılar için stil */
+.new-content p {
+  color: white; /* Yazı rengini beyaz yapıyoruz */
+  margin-bottom: 20px; /* Yazılar arasına 20px'lik boşluk bırakıyoruz */
+  font-size: 18px; /* Yazı boyutunu 18px yapıyoruz */
+  line-height: 1.6; /* Satır yüksekliğini artırıyoruz */
+  text-align: center; /* Yazıyı ortalıyoruz */
+  width: 100%; /* Yazının genişliğini %100 yapıyoruz */
+  word-wrap: break-word; /* Uzun kelimeleri kesiyoruz */
+  word-break: break-word; /* Uzun kelimeleri kesiyoruz */
+  overflow-wrap: break-word; /* Uzun kelimeleri kesiyoruz */
+  max-width: 600px; /* Yazı kutusunun genişliğini 600px ile sınırlıyoruz */
+  padding: 10px; /* Yazıya padding ekliyoruz */
+  margin: 0 auto; /* Yazıyı ortalıyoruz */
+  background: rgba(255, 255, 255, 0.1); /* Yarı saydam beyaz arka plan ekliyoruz */
+  border-radius: 8px; /* Köşeleri yuvarlatıyoruz */
+}
+
+/* Geri butonu */
+.back-button {
+  position: absolute; /* Konumlandırma için absolute kullanıyoruz */
+  top: 20px; /* Üstten 20px mesafe bırakıyoruz */
+  right: 20px; /* Sağdan 20px mesafe bırakıyoruz */
+  padding: 10px 20px; /* Butona iç padding ekliyoruz */
+  background: linear-gradient(135deg, #ff0078, #ffbf00); /* Butonun arka planını gradyan yapıyoruz */
+  color: white; /* Yazı rengini beyaz yapıyoruz */
+  font-weight: bold; /* Yazıyı kalın yapıyoruz */
+  border: none; /* Kenarlıkları kaldırıyoruz */
+  border-radius: 8px; /* Butonun köşelerini yuvarlatıyoruz */
+  cursor: pointer; /* Fareyle üzerine gelindiğinde pointer işareti görünsün */
+  transition: transform 0.3s ease; /* Geçiş efektleri ekliyoruz */
+}
+
+/* Yeni aksiyon butonu */
+.new-action-button {
+  padding: 12px 24px; /* Butona padding ekliyoruz */
+  background: linear-gradient(135deg, #007bff, #00ff00); /* Butonun arka planını gradyan yapıyoruz */
+  color: white; /* Yazı rengini beyaz yapıyoruz */
+  font-weight: bold; /* Yazıyı kalın yapıyoruz */
+  border: none; /* Kenarlıkları kaldırıyoruz */
+  border-radius: 8px; /* Butonun köşelerini yuvarlatıyoruz */
+  cursor: pointer; /* Fareyle üzerine gelindiğinde pointer işareti görünsün */
+  font-size: 16px; /* Yazı boyutunu 16px yapıyoruz */
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Geçiş efektleri ekliyoruz */
+  margin-top: 20px; /* Butonun üst kısmına 20px boşluk bırakıyoruz */
+}
+
+.new-action-button:hover {
+  transform: scale(1.1); /* Fareyle üzerine gelindiğinde butonu %10 büyütüyoruz */
+  background: linear-gradient(135deg, #00ff00, #007bff); /* Arka plan rengini değiştiriyoruz */
+}
+
+/* Fade in animasyonu */
+@keyframes fadeIn {
+  from { opacity: 0; } /* Başlangıçta görünmez */
+  to { opacity: 1; } /* Sonunda tamamen görünür */
+}
+
+/* Fade out animasyonu */
+@keyframes fadeOut {
+  from { opacity: 1; } /* Başlangıçta tamamen görünür */
+  to { opacity: 0; } /* Sonunda görünmez */
+}
