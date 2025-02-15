@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Oynatıcı</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            background-color: black;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Tam ekran doldurur və qırpmalar ola bilər */
+        }
+    </style>
+</head>
+<body>
+    <div class="video-container">
+        <video id="myVideo" autoplay loop muted playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Brauzeriniz video dəstəkləmir.
+        </video>
+    </div>
+
+    <script>
+        // İstəyə bağlı olaraq əlavə JS ilə səs açıq və ya nəzarət əlavə edilə bilər.
+        const video = document.getElementById('myVideo');
+        video.play().catch(error => {
+            console.error("Video avtomatik başlamadı:", error);
+        });
+    </script>
+</body>
+</html>
